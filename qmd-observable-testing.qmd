@@ -2,6 +2,10 @@
 title: "Observable + Quarto - 3 ways"
 format: html
 editor: visual
+execute:
+  echo: fenced
+  message: false
+  warning: false
 ---
 
 ## 1. `robservable` package:
@@ -11,8 +15,6 @@ The [`robservable`](https://juba.github.io/robservable/) R package "allows the u
 [^1]: https://juba.github.io/robservable/
 
 ```{r}
-#| message: false
-#| warning: false
 library(robservable)
 ```
 
@@ -23,7 +25,7 @@ robservable(
 )
 ```
 
-## 2. `import`: 
+## 2. `import`:
 
 Within `{ojs}` cells in a .qmd, we can use [imports](https://observablehq.com/@observablehq/import) to access named cells from an Observable notebook:
 
