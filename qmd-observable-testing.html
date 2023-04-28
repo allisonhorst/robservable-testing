@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Observable + Quarto - 3 ways</title>
+<title>Observable in Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,6 +71,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="qmd-observable-testing_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 <script src="qmd-observable-testing_files/libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <script src="qmd-observable-testing_files/libs/robservable-binding-0.2.2.9000/robservable.js"></script>
+<script type="ojs-define">
+{"contents":[{"name":"ojs_df","value":{"name":["Milo","Otis","Scout"],"weight":[20,11,42]}}]}
+</script>
 
 
 </head>
@@ -83,7 +86,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Observable + Quarto - 3 ways</h1>
+<h1 class="title">Observable in Quarto</h1>
 </div>
 
 
@@ -98,9 +101,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>The goal of this document is to explore and compare workflow options for people working in Observable and Quarto.</p>
-<section id="robservable-package" class="level2">
-<h2 class="anchored" data-anchor-id="robservable-package">1. <code>robservable</code> package:</h2>
+<p>The goal of this document is to explore and compare workflow options for people working in Observable and Quarto. Order doesn’t imply any kind of ranking or preference.</p>
+<p>Observable notebook: <a href="https://observablehq.com/@observablehq/test-observable-quarto">https://observablehq.com/@observablehq/test-observable-quarto</a></p>
+<section id="robservable" class="level2">
+<h2 class="anchored" data-anchor-id="robservable">1. <code>robservable</code></h2>
 <p>The <a href="https://juba.github.io/robservable/"><code>robservable</code></a> R package “allows the use of <a href="https://observablehq.com/">Observable</a> notebooks (or parts of them) as <code>htmlwidgets</code> in R.”<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
@@ -115,8 +119,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="robservable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-657e88217c6ed3179f71" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-657e88217c6ed3179f71">{"x":{"notebook":"@observablehq/test-observable-quarto","include":"staticChart","hide":null,"input":null,"input_js":[],"observers":null,"update_height":true,"update_width":true},"evals":[],"jsHooks":[]}</script>
+<div class="robservable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ad531b1a80594e5003c6" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-ad531b1a80594e5003c6">{"x":{"notebook":"@observablehq/test-observable-quarto","include":"staticChart","hide":null,"input":null,"input_js":[],"observers":null,"update_height":true,"update_width":true},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <section id="with-an-input" class="level3">
@@ -129,19 +133,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="robservable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-da96cb047b39d6bc47fc" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-da96cb047b39d6bc47fc">{"x":{"notebook":"@observablehq/test-observable-quarto","include":["viewof dogRadio","chart"],"hide":null,"input":null,"input_js":[],"observers":null,"update_height":true,"update_width":true},"evals":[],"jsHooks":[]}</script>
+<div class="robservable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6f8b005f751a13089f47" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-6f8b005f751a13089f47">{"x":{"notebook":"@observablehq/test-observable-quarto","include":["viewof dogRadio","chart"],"hide":null,"input":null,"input_js":[],"observers":null,"update_height":true,"update_width":true},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="with-new-data-a-data-frame" class="level3">
+<h3 class="anchored" data-anchor-id="with-new-data-a-data-frame">With new data (a data frame):</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new data frame with the same variable names: </span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Milo"</span>, <span class="st">"Otis"</span>, <span class="st">"Scout"</span>), <span class="at">weight =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">11</span>, <span class="dv">42</span>))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">robservable</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"@observablehq/test-observable-quarto"</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">include =</span> <span class="fu">c</span>(<span class="st">"viewof dogRadio"</span>, <span class="st">"chart"</span>),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">input =</span> <span class="fu">list</span>(<span class="at">data =</span> df) <span class="co"># Replace data with df</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="robservable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-77a82e8dd16c7debc2a3" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-77a82e8dd16c7debc2a3">{"x":{"notebook":"@observablehq/test-observable-quarto","include":["viewof dogRadio","chart"],"hide":null,"input":{"data":[{"name":"Milo","weight":20},{"name":"Otis","weight":11},{"name":"Scout","weight":42}]},"input_js":[],"observers":null,"update_height":true,"update_width":true},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
 </section>
 <section id="import" class="level2">
-<h2 class="anchored" data-anchor-id="import">2. <code>import</code>:</h2>
+<h2 class="anchored" data-anchor-id="import">2. <code>import</code></h2>
 <p>Within <code>{ojs}</code> cells in a .qmd, we can use <a href="https://observablehq.com/@observablehq/import">imports</a> to access named cells from an Observable notebook:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4" data-startfrom="43" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 42;"><span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">{staticChart} from "@observablehq/testing-robservable"</span></span>
-<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6" data-startfrom="60" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 59;"><span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">{staticChart} from "@observablehq/testing-robservable"</span></span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="declaration">
 
@@ -149,27 +175,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5" data-startfrom="47" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 46;"><span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>staticChart</span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7" data-startfrom="64" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 63;"><span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>staticChart</span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-2" data-nodetype="expression">
 
 </div>
 </div>
 </div>
+<p>Still to try:</p>
+<ul>
+<li><p>Imports w/ inputs?</p></li>
+<li><p>Import with?</p></li>
+</ul>
 </section>
 <section id="ojs-cells" class="level2">
-<h2 class="anchored" data-anchor-id="ojs-cells">3. <code>{ojs}</code> cells:</h2>
-<p>Or, we can write code directly in <code>{ojs}</code> cells:</p>
+<h2 class="anchored" data-anchor-id="ojs-cells">3. <code>{ojs}</code> cells</h2>
+<p>Write code directly in <code>{ojs}</code> cells:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6" data-startfrom="55" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 54;"><span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
-<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="op">[{</span>name<span class="op">:</span> <span class="st">"Teddy"</span><span class="op">,</span> weight<span class="op">:</span> <span class="dv">50</span><span class="op">},</span></span>
-<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>             <span class="op">{</span>name<span class="op">:</span> <span class="st">"Khora"</span><span class="op">,</span> weight<span class="op">:</span> <span class="dv">60</span><span class="op">},</span></span>
-<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>             <span class="op">{</span>name<span class="op">:</span> <span class="st">"Waffle"</span><span class="op">,</span> weight<span class="op">:</span> <span class="dv">35</span><span class="op">},</span></span>
-<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>             <span class="op">{</span>name<span class="op">:</span> <span class="st">"Banjo"</span><span class="op">,</span> weight<span class="op">:</span> <span class="dv">40</span><span class="op">},</span></span>
-<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>             <span class="op">{</span>name<span class="op">:</span> <span class="st">"Tallie"</span><span class="op">,</span> weight<span class="op">:</span> <span class="dv">55</span><span class="op">}]</span></span>
-<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8" data-startfrom="78" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 77;"><span id="cb8-78"><a href="#cb8-78" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
+<span id="cb8-79"><a href="#cb8-79" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="op">[{</span>name<span class="op">:</span> <span class="st">"Teddy"</span><span class="op">,</span> weight<span class="op">:</span> <span class="dv">50</span><span class="op">},</span></span>
+<span id="cb8-80"><a href="#cb8-80" aria-hidden="true" tabindex="-1"></a>             <span class="op">{</span>name<span class="op">:</span> <span class="st">"Khora"</span><span class="op">,</span> weight<span class="op">:</span> <span class="dv">60</span><span class="op">},</span></span>
+<span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a>             <span class="op">{</span>name<span class="op">:</span> <span class="st">"Waffle"</span><span class="op">,</span> weight<span class="op">:</span> <span class="dv">35</span><span class="op">},</span></span>
+<span id="cb8-82"><a href="#cb8-82" aria-hidden="true" tabindex="-1"></a>             <span class="op">{</span>name<span class="op">:</span> <span class="st">"Banjo"</span><span class="op">,</span> weight<span class="op">:</span> <span class="dv">40</span><span class="op">},</span></span>
+<span id="cb8-83"><a href="#cb8-83" aria-hidden="true" tabindex="-1"></a>             <span class="op">{</span>name<span class="op">:</span> <span class="st">"Tallie"</span><span class="op">,</span> weight<span class="op">:</span> <span class="dv">55</span><span class="op">}]</span></span>
+<span id="cb8-84"><a href="#cb8-84" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-3" data-nodetype="declaration">
 
@@ -177,14 +208,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7" data-startfrom="63" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 62;"><span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
-<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span><span class="op">({</span></span>
-<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>  marks<span class="op">:</span> <span class="op">[</span></span>
-<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">barY</span><span class="op">(</span>data<span class="op">,</span> <span class="op">{</span>x<span class="op">:</span> <span class="st">"name"</span><span class="op">,</span> y<span class="op">:</span> <span class="st">"weight"</span><span class="op">,</span> sort<span class="op">:</span> <span class="op">{</span>x<span class="op">:</span> <span class="st">"y"</span><span class="op">,</span> reverse<span class="op">:</span> <span class="kw">true</span><span class="op">}}),</span></span>
-<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span><span class="op">([</span><span class="dv">0</span><span class="op">])</span></span>
-<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>  <span class="op">]</span></span>
-<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a><span class="op">})</span></span>
-<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9" data-startfrom="86" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 85;"><span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span><span class="op">({</span></span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a>  marks<span class="op">:</span> <span class="op">[</span></span>
+<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">barY</span><span class="op">(</span>data<span class="op">,</span> <span class="op">{</span>x<span class="op">:</span> <span class="st">"name"</span><span class="op">,</span> y<span class="op">:</span> <span class="st">"weight"</span><span class="op">,</span> sort<span class="op">:</span> <span class="op">{</span>x<span class="op">:</span> <span class="st">"y"</span><span class="op">,</span> reverse<span class="op">:</span> <span class="kw">true</span><span class="op">}}),</span></span>
+<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span><span class="op">([</span><span class="dv">0</span><span class="op">])</span></span>
+<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a>  <span class="op">]</span></span>
+<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a><span class="op">})</span></span>
+<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-4" data-nodetype="expression">
 
@@ -192,11 +223,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <section id="with-an-input-1" class="level3">
-<h3 class="anchored" data-anchor-id="with-an-input-1">With an input:</h3>
+<h3 class="anchored" data-anchor-id="with-an-input-1">With an Input:</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8" data-startfrom="74" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 73;"><span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
-<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a>viewof dogRadio <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span><span class="op">(</span>data<span class="op">.</span><span class="fu">map</span><span class="op">(</span>d <span class="op">=&gt;</span> d<span class="op">.</span><span class="fu">name</span><span class="op">),</span> <span class="op">{</span>label<span class="op">:</span> <span class="st">"Select one:"</span><span class="op">,</span> value<span class="op">:</span> <span class="st">"Teddy"</span><span class="op">})</span></span>
-<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10" data-startfrom="97" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 96;"><span id="cb10-97"><a href="#cb10-97" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
+<span id="cb10-98"><a href="#cb10-98" aria-hidden="true" tabindex="-1"></a>viewof dogRadio <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span><span class="op">(</span>data<span class="op">.</span><span class="fu">map</span><span class="op">(</span>d <span class="op">=&gt;</span> d<span class="op">.</span><span class="fu">name</span><span class="op">),</span> <span class="op">{</span>label<span class="op">:</span> <span class="st">"Select one:"</span><span class="op">,</span> value<span class="op">:</span> <span class="st">"Teddy"</span><span class="op">})</span></span>
+<span id="cb10-99"><a href="#cb10-99" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-5" data-nodetype="declaration">
 
@@ -204,16 +235,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9" data-startfrom="78" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 77;"><span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
-<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span><span class="op">({</span></span>
-<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a>  marks<span class="op">:</span> <span class="op">[</span></span>
-<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">barY</span><span class="op">(</span>data<span class="op">,</span> <span class="op">{</span>x<span class="op">:</span> <span class="st">"name"</span><span class="op">,</span> y<span class="op">:</span> <span class="st">"weight"</span><span class="op">,</span> fill<span class="op">:</span> d <span class="op">=&gt;</span> d<span class="op">.</span><span class="fu">name</span> <span class="op">===</span> dogRadio <span class="op">?</span> <span class="st">"red"</span> <span class="op">:</span> <span class="st">"#ccc"</span><span class="op">,</span> sort<span class="op">:</span> <span class="op">{</span>x<span class="op">:</span> <span class="st">"y"</span><span class="op">,</span> reverse<span class="op">:</span> <span class="kw">true</span><span class="op">}}),</span></span>
-<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span><span class="op">([</span><span class="dv">0</span><span class="op">])</span></span>
-<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a>  <span class="op">]</span></span>
-<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a><span class="op">})</span></span>
-<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11" data-startfrom="101" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 100;"><span id="cb11-101"><a href="#cb11-101" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
+<span id="cb11-102"><a href="#cb11-102" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span><span class="op">({</span></span>
+<span id="cb11-103"><a href="#cb11-103" aria-hidden="true" tabindex="-1"></a>  marks<span class="op">:</span> <span class="op">[</span></span>
+<span id="cb11-104"><a href="#cb11-104" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">barY</span><span class="op">(</span>data<span class="op">,</span> <span class="op">{</span>x<span class="op">:</span> <span class="st">"name"</span><span class="op">,</span> y<span class="op">:</span> <span class="st">"weight"</span><span class="op">,</span> fill<span class="op">:</span> d <span class="op">=&gt;</span> d<span class="op">.</span><span class="fu">name</span> <span class="op">===</span> dogRadio <span class="op">?</span> <span class="st">"red"</span> <span class="op">:</span> <span class="st">"#ccc"</span><span class="op">,</span> sort<span class="op">:</span> <span class="op">{</span>x<span class="op">:</span> <span class="st">"y"</span><span class="op">,</span> reverse<span class="op">:</span> <span class="kw">true</span><span class="op">}}),</span></span>
+<span id="cb11-105"><a href="#cb11-105" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span><span class="op">([</span><span class="dv">0</span><span class="op">])</span></span>
+<span id="cb11-106"><a href="#cb11-106" aria-hidden="true" tabindex="-1"></a>  <span class="op">]</span></span>
+<span id="cb11-107"><a href="#cb11-107" aria-hidden="true" tabindex="-1"></a><span class="op">})</span></span>
+<span id="cb11-108"><a href="#cb11-108" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-6" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</section>
+<section id="using-r-py-etc.-outputs-e.g.-data-frames-in-ojs-cells" class="level3">
+<h3 class="anchored" data-anchor-id="using-r-py-etc.-outputs-e.g.-data-frames-in-ojs-cells">Using R / Py / etc. outputs (e.g.&nbsp;data frames) in <code>{ojs}</code> cells:</h3>
+<p>Note: <code>df</code> (a data frame) is created in an R code chunk above. From Quarto documentation: ” the <code>ojs_define()</code> function to make data processed in Python or R available to <code>{ojs}</code> cells.”<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ojs_define</span>(<span class="at">ojs_df =</span> df)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13" data-startfrom="120" data-source-offset="9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 119;"><span id="cb13-120"><a href="#cb13-120" aria-hidden="true" tabindex="-1"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
+<span id="cb13-121"><a href="#cb13-121" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span><span class="op">({</span></span>
+<span id="cb13-122"><a href="#cb13-122" aria-hidden="true" tabindex="-1"></a>  marks<span class="op">:</span> <span class="op">[</span></span>
+<span id="cb13-123"><a href="#cb13-123" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">barY</span><span class="op">(</span><span class="fu">transpose</span><span class="op">(</span>ojs_df<span class="op">),</span> <span class="op">{</span>x<span class="op">:</span> <span class="st">"name"</span><span class="op">,</span> y<span class="op">:</span> <span class="st">"weight"</span><span class="op">,</span> sort<span class="op">:</span> <span class="op">{</span>x<span class="op">:</span> <span class="st">"y"</span><span class="op">,</span> reverse<span class="op">:</span> <span class="kw">true</span><span class="op">}}),</span></span>
+<span id="cb13-124"><a href="#cb13-124" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span><span class="op">([</span><span class="dv">0</span><span class="op">])</span></span>
+<span id="cb13-125"><a href="#cb13-125" aria-hidden="true" tabindex="-1"></a>  <span class="op">]</span></span>
+<span id="cb13-126"><a href="#cb13-126" aria-hidden="true" tabindex="-1"></a><span class="op">})</span></span>
+<span id="cb13-127"><a href="#cb13-127" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-7" data-nodetype="expression">
 
 </div>
 </div>
@@ -222,7 +277,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="embeds" class="level2">
 <h2 class="anchored" data-anchor-id="embeds">4. Embeds</h2>
-<p>You can embed an iframe in a raw html code block:</p>
+<p>We can embed an iframe in a raw html code block:</p>
 <pre><code>```{=html}
 &lt;iframe width="100%" height="519" frameborder="0"
   src="https://observablehq.com/embed/@observablehq/test-observable-quarto@31?cells=viewof+dogRadio%2Cchart"&gt;&lt;/iframe&gt;
@@ -235,11 +290,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <ol>
 <li id="fn1"><p>https://juba.github.io/robservable/<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>https://quarto.org/docs/interactive/ojs/data-sources.html<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main>
 <!-- /main column -->
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"import {staticChart} from \"@observablehq/testing-robservable\"\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"staticChart\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"data = [{name: \"Teddy\", weight: 50},\n             {name: \"Khora\", weight: 60},\n             {name: \"Waffle\", weight: 35},\n             {name: \"Banjo\", weight: 40},\n             {name: \"Tallie\", weight: 55}]\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"Plot.plot({\n  marks: [\n    Plot.barY(data, {x: \"name\", y: \"weight\", sort: {x: \"y\", reverse: true}}),\n    Plot.ruleY([0])\n  ]\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-5","inline":false,"source":"viewof dogRadio = Inputs.radio(data.map(d => d.name), {label: \"Select one:\", value: \"Teddy\"})\n"},{"methodName":"interpret","cellName":"ojs-cell-6","inline":false,"source":"Plot.plot({\n  marks: [\n    Plot.barY(data, {x: \"name\", y: \"weight\", fill: d => d.name === dogRadio ? \"red\" : \"#ccc\", sort: {x: \"y\", reverse: true}}),\n    Plot.ruleY([0])\n  ]\n})\n"},{"methodName":"interpretQuiet","source":"shinyInput('dogRadio')"}]}
+{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"import {staticChart} from \"@observablehq/testing-robservable\"\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"staticChart\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"data = [{name: \"Teddy\", weight: 50},\n             {name: \"Khora\", weight: 60},\n             {name: \"Waffle\", weight: 35},\n             {name: \"Banjo\", weight: 40},\n             {name: \"Tallie\", weight: 55}]\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"Plot.plot({\n  marks: [\n    Plot.barY(data, {x: \"name\", y: \"weight\", sort: {x: \"y\", reverse: true}}),\n    Plot.ruleY([0])\n  ]\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-5","inline":false,"source":"viewof dogRadio = Inputs.radio(data.map(d => d.name), {label: \"Select one:\", value: \"Teddy\"})\n"},{"methodName":"interpret","cellName":"ojs-cell-6","inline":false,"source":"Plot.plot({\n  marks: [\n    Plot.barY(data, {x: \"name\", y: \"weight\", fill: d => d.name === dogRadio ? \"red\" : \"#ccc\", sort: {x: \"y\", reverse: true}}),\n    Plot.ruleY([0])\n  ]\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-7","inline":false,"source":"Plot.plot({\n  marks: [\n    Plot.barY(transpose(ojs_df), {x: \"name\", y: \"weight\", sort: {x: \"y\", reverse: true}}),\n    Plot.ruleY([0])\n  ]\n})\n"},{"methodName":"interpretQuiet","source":"shinyInput('dogRadio')"}]}
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
