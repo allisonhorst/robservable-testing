@@ -1,0 +1,46 @@
+---
+title: "robservable example"
+format: html
+editor: visual
+---
+
+The [`robservable`](https://juba.github.io/robservable/) R package "allows the use of [Observable](https://observablehq.com/) notebooks (or parts of them) as `htmlwidgets` in R."[^1]
+
+[^1]: https://juba.github.io/robservable/
+
+```{r}
+library(robservable)
+```
+
+```{r}
+robservable(
+  "@observablehq/test-observable-quarto",
+  include = c("staticChart")
+)
+```
+
+### With an input:
+
+```{r}
+robservable(
+  "@observablehq/test-observable-quarto",
+  include = c("viewof dogRadio", "chart")
+)
+```
+
+### With new data (a data frame):
+
+```{r}
+# Create a new data frame with the same variable names: 
+df = data.frame(name = c("Milo", "Otis", "Scout"), weight = c(20, 11, 42))
+```
+
+```{r}
+robservable(
+  "@observablehq/test-observable-quarto",
+  include = c("viewof dogRadio", "chart"),
+  input = list(data = df) # Replace data with df
+)
+```
+
+## 

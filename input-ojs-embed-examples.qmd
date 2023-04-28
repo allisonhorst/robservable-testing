@@ -1,5 +1,5 @@
 ---
-title: "Observable in Quarto"
+title: "import, {ojs}, and embed examples in Quarto"
 format: html
 editor: visual
 execute:
@@ -12,48 +12,7 @@ The goal of this document is to explore and compare workflow options for people 
 
 Observable notebook: [https://observablehq.com/\@observablehq/test-observable-quarto](https://observablehq.com/@observablehq/test-observable-quarto)
 
-## 1. `robservable` 
-
-The [`robservable`](https://juba.github.io/robservable/) R package "allows the use of [Observable](https://observablehq.com/) notebooks (or parts of them) as `htmlwidgets` in R."[^1]
-
-[^1]: https://juba.github.io/robservable/
-
-```{r}
-library(robservable)
-```
-
-```{r}
-robservable(
-  "@observablehq/test-observable-quarto",
-  include = c("staticChart")
-)
-```
-
-### With an input: 
-
-```{r}
-robservable(
-  "@observablehq/test-observable-quarto",
-  include = c("viewof dogRadio", "chart")
-)
-```
-
-### With new data (a data frame):
-
-```{r}
-# Create a new data frame with the same variable names: 
-df = data.frame(name = c("Milo", "Otis", "Scout"), weight = c(20, 11, 42))
-```
-
-```{r}
-robservable(
-  "@observablehq/test-observable-quarto",
-  include = c("viewof dogRadio", "chart"),
-  input = list(data = df) # Replace data with df
-)
-```
-
-## 2. `import`
+## `import`
 
 Within `{ojs}` cells in a .qmd, we can use [imports](https://observablehq.com/@observablehq/import) to access named cells from an Observable notebook:
 
@@ -71,7 +30,7 @@ Still to try:
 
 -   Import with?
 
-## 3. `{ojs}` cells
+## `{ojs}` cells
 
 Write code directly in `{ojs}` cells:
 
@@ -107,11 +66,16 @@ Plot.plot({
 })
 ```
 
-### Using R / Py / etc. outputs (e.g. data frames) in `{ojs}` cells: 
+### Using R / Py / etc. outputs (e.g. data frames) in `{ojs}` cells:
 
-Note: `df` (a data frame) is created in an R code chunk above. From Quarto documentation: " the `ojs_define()` function to make data processed in Python or R available to `{ojs}` cells."[^2]
+From Quarto documentation: " the `ojs_define()` function to make data processed in Python or R available to `{ojs}` cells."[^1]
 
-[^2]: https://quarto.org/docs/interactive/ojs/data-sources.html
+[^1]: https://quarto.org/docs/interactive/ojs/data-sources.html
+
+```{r}
+# Create a new data frame with the same variable names: 
+df = data.frame(name = c("Milo", "Otis", "Scout"), weight = c(20, 11, 42))
+```
 
 ```{r}
 ojs_define(ojs_df = df)
@@ -126,16 +90,14 @@ Plot.plot({
 })
 ```
 
-## 4. Embeds
+## Embeds
 
 We can embed an iframe in a raw html code block:
 
-````         
-```{=html}
+```{{=html}}
 <iframe width="100%" height="519" frameborder="0"
   src="https://observablehq.com/embed/@observablehq/test-observable-quarto@31?cells=viewof+dogRadio%2Cchart"></iframe>
 ```
-````
 
 ```{=html}
 <iframe width="100%" height="519" frameborder="0"
