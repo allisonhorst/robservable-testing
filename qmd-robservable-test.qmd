@@ -1,0 +1,57 @@
+---
+title: "Observable + Quarto - 3 ways"
+format: html
+editor: visual
+---
+
+## 1. `robservable` package:
+
+The [`robservable`](https://juba.github.io/robservable/) R package "allows the use of [Observable](https://observablehq.com/) notebooks (or parts of them) as `htmlwidgets` in R."[^1]
+
+[^1]: https://juba.github.io/robservable/
+
+```{r}
+#| message: false
+#| warning: false
+library(robservable)
+```
+
+```{r}
+robservable(
+  "@observablehq/test-observable-quarto",
+  include = c("staticChart")
+)
+```
+
+## 2. `import`: 
+
+Within `{ojs}` cells in a .qmd, we can use [imports](https://observablehq.com/@observablehq/import) to access named cells from an Observable notebook:
+
+```{ojs}
+import {staticChart} from "@observablehq/testing-robservable"
+```
+
+```{ojs}
+staticChart
+```
+
+## 3. `{ojs}` cells:
+
+Or, we can write code directly in `{ojs}` cells:
+
+```{ojs}
+testArray = [{name: "Teddy", weight: 50},
+             {name: "Khora", weight: 60},
+             {name: "Waffle", weight: 35},
+             {name: "Banjo", weight: 40},
+             {name: "Tallie", weight: 55}]
+```
+
+```{ojs}
+Plot.plot({
+  marks: [
+    Plot.barY(testArray, {x: "name", y: "weight", sort: {x: "y", reverse: true}}),
+    Plot.ruleY([0])
+  ]
+})
+```
