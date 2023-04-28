@@ -85,3 +85,17 @@ Plot.plot({
 ```
 
 ## 4. Embeds
+
+You can embed an iframe in a raw html code block:
+
+````         
+```{=html}
+<iframe width="100%" height="519" frameborder="0"
+  src="https://observablehq.com/embed/@observablehq/test-observable-quarto@31?cells=viewof+dogRadio%2Cchart"></iframe>
+```
+````
+
+```{=html}
+<iframe width="100%" height="519" frameborder="0"
+  src="https://observablehq.com/embed/@observablehq/test-observable-quarto@31?cells=viewof+dogRadio%2Cchart"></iframe>
+```
