@@ -8,6 +8,8 @@ execute:
   warning: false
 ---
 
+The goal of this document is to explore and compare workflow options for people working in Observable and Quarto.
+
 ## 1. `robservable` package:
 
 The [`robservable`](https://juba.github.io/robservable/) R package "allows the use of [Observable](https://observablehq.com/) notebooks (or parts of them) as `htmlwidgets` in R."[^1]
@@ -22,6 +24,15 @@ library(robservable)
 robservable(
   "@observablehq/test-observable-quarto",
   include = c("staticChart")
+)
+```
+
+### With an input: 
+
+```{r}
+robservable(
+  "@observablehq/test-observable-quarto",
+  include = c("viewof dogRadio", "chart")
 )
 ```
 
@@ -42,7 +53,7 @@ staticChart
 Or, we can write code directly in `{ojs}` cells:
 
 ```{ojs}
-testArray = [{name: "Teddy", weight: 50},
+data = [{name: "Teddy", weight: 50},
              {name: "Khora", weight: 60},
              {name: "Waffle", weight: 35},
              {name: "Banjo", weight: 40},
@@ -52,8 +63,25 @@ testArray = [{name: "Teddy", weight: 50},
 ```{ojs}
 Plot.plot({
   marks: [
-    Plot.barY(testArray, {x: "name", y: "weight", sort: {x: "y", reverse: true}}),
+    Plot.barY(data, {x: "name", y: "weight", sort: {x: "y", reverse: true}}),
     Plot.ruleY([0])
   ]
 })
 ```
+
+### With an input:
+
+```{ojs}
+viewof dogRadio = Inputs.radio(data.map(d => d.name), {label: "Select one:", value: "Teddy"})
+```
+
+```{ojs}
+Plot.plot({
+  marks: [
+    Plot.barY(data, {x: "name", y: "weight", fill: d => d.name === dogRadio ? "red" : "#ccc", sort: {x: "y", reverse: true}}),
+    Plot.ruleY([0])
+  ]
+})
+```
+
+## 4. Embeds
