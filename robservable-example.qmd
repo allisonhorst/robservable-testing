@@ -2,6 +2,10 @@
 title: "robservable example"
 format: html
 editor: visual
+execute:
+  echo: fenced
+  message: false
+  warning: false
 ---
 
 The [`robservable`](https://juba.github.io/robservable/) R package "allows the use of [Observable](https://observablehq.com/) notebooks (or parts of them) as `htmlwidgets` in R."[^1]

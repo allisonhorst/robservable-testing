@@ -98,46 +98,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>The <a href="https://juba.github.io/robservable/"><code>robservable</code></a> R package “allows the use of <a href="https://observablehq.com/">Observable</a> notebooks (or parts of them) as <code>htmlwidgets</code> in R.”<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(robservable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(robservable)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">robservable</span>(</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"@observablehq/test-observable-quarto"</span>,</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">include =</span> <span class="fu">c</span>(<span class="st">"staticChart"</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">robservable</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"@observablehq/test-observable-quarto"</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">include =</span> <span class="fu">c</span>(<span class="st">"staticChart"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="robservable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5fbe454fd91e6c6ac571" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-5fbe454fd91e6c6ac571">{"x":{"notebook":"@observablehq/test-observable-quarto","include":"staticChart","hide":null,"input":null,"input_js":[],"observers":null,"update_height":true,"update_width":true},"evals":[],"jsHooks":[]}</script>
+<div class="robservable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-66dfc5c246ce22b88640" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-66dfc5c246ce22b88640">{"x":{"notebook":"@observablehq/test-observable-quarto","include":"staticChart","hide":null,"input":null,"input_js":[],"observers":null,"update_height":true,"update_width":true},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <section id="with-an-input" class="level3">
 <h3 class="anchored" data-anchor-id="with-an-input">With an input:</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">robservable</span>(</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"@observablehq/test-observable-quarto"</span>,</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">include =</span> <span class="fu">c</span>(<span class="st">"viewof dogRadio"</span>, <span class="st">"chart"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">robservable</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"@observablehq/test-observable-quarto"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">include =</span> <span class="fu">c</span>(<span class="st">"viewof dogRadio"</span>, <span class="st">"chart"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="robservable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7f5650146a0d11fbc3c9" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-7f5650146a0d11fbc3c9">{"x":{"notebook":"@observablehq/test-observable-quarto","include":["viewof dogRadio","chart"],"hide":null,"input":null,"input_js":[],"observers":null,"update_height":true,"update_width":true},"evals":[],"jsHooks":[]}</script>
+<div class="robservable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e8482967db29a815909d" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-e8482967db29a815909d">{"x":{"notebook":"@observablehq/test-observable-quarto","include":["viewof dogRadio","chart"],"hide":null,"input":null,"input_js":[],"observers":null,"update_height":true,"update_width":true},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
 <section id="with-new-data-a-data-frame" class="level3">
 <h3 class="anchored" data-anchor-id="with-new-data-a-data-frame">With new data (a data frame):</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new data frame with the same variable names: </span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Milo"</span>, <span class="st">"Otis"</span>, <span class="st">"Scout"</span>), <span class="at">weight =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">11</span>, <span class="dv">42</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new data frame with the same variable names: </span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Milo"</span>, <span class="st">"Otis"</span>, <span class="st">"Scout"</span>), <span class="at">weight =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">11</span>, <span class="dv">42</span>))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">robservable</span>(</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"@observablehq/test-observable-quarto"</span>,</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">include =</span> <span class="fu">c</span>(<span class="st">"viewof dogRadio"</span>, <span class="st">"chart"</span>),</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">input =</span> <span class="fu">list</span>(<span class="at">data =</span> df) <span class="co"># Replace data with df</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">robservable</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"@observablehq/test-observable-quarto"</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">include =</span> <span class="fu">c</span>(<span class="st">"viewof dogRadio"</span>, <span class="st">"chart"</span>),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">input =</span> <span class="fu">list</span>(<span class="at">data =</span> df) <span class="co"># Replace data with df</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="robservable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-c202fda5fdd07e7a3759" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-c202fda5fdd07e7a3759">{"x":{"notebook":"@observablehq/test-observable-quarto","include":["viewof dogRadio","chart"],"hide":null,"input":{"data":[{"name":"Milo","weight":20},{"name":"Otis","weight":11},{"name":"Scout","weight":42}]},"input_js":[],"observers":null,"update_height":true,"update_width":true},"evals":[],"jsHooks":[]}</script>
+<div class="robservable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-44da2ebe7eabf3c0ae0d" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-44da2ebe7eabf3c0ae0d">{"x":{"notebook":"@observablehq/test-observable-quarto","include":["viewof dogRadio","chart"],"hide":null,"input":{"data":[{"name":"Milo","weight":20},{"name":"Otis","weight":11},{"name":"Scout","weight":42}]},"input_js":[],"observers":null,"update_height":true,"update_width":true},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
