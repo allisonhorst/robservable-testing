@@ -1,5 +1,5 @@
 ---
-title: "robservable in R Markdown?"
+title: "robservable in R Markdown"
 author: "Allison Horst"
 date: "2023-04-28"
 output: html_document

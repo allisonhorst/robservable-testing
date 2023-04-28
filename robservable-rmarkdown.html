@@ -13,7 +13,7 @@
 
 <meta name="date" content="2023-04-28" />
 
-<title>robservable in R Markdown?</title>
+<title>robservable in R Markdown</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1253,7 +1253,7 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">robservable in R Markdown?</h1>
+<h1 class="title toc-ignore">robservable in R Markdown</h1>
 <h4 class="author">Allison Horst</h4>
 <h4 class="date">2023-04-28</h4>
 
@@ -1267,15 +1267,15 @@ parts of them) as htmlwidgets in R.”</p>
   &quot;@observablehq/test-observable-quarto&quot;,
   include = c(&quot;staticChart&quot;)
 )</code></pre>
-<div class="robservable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-c73bf2c85de1d36806db" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-c73bf2c85de1d36806db">{"x":{"notebook":"@observablehq/test-observable-quarto","include":"staticChart","hide":null,"input":null,"input_js":[],"observers":null,"update_height":true,"update_width":true},"evals":[],"jsHooks":[]}</script>
+<div class="robservable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-44146d5ff450e940fc0e" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-44146d5ff450e940fc0e">{"x":{"notebook":"@observablehq/test-observable-quarto","include":"staticChart","hide":null,"input":null,"input_js":[],"observers":null,"update_height":true,"update_width":true},"evals":[],"jsHooks":[]}</script>
 <p>With an input:</p>
 <pre class="r"><code>robservable(
   &quot;@observablehq/test-observable-quarto&quot;,
   include = c(&quot;viewof dogRadio&quot;, &quot;chart&quot;)
 )</code></pre>
-<div class="robservable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2ffc855f731d475b5f55" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-2ffc855f731d475b5f55">{"x":{"notebook":"@observablehq/test-observable-quarto","include":["viewof dogRadio","chart"],"hide":null,"input":null,"input_js":[],"observers":null,"update_height":true,"update_width":true},"evals":[],"jsHooks":[]}</script>
+<div class="robservable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2ea81a5593bd82b6277d" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-2ea81a5593bd82b6277d">{"x":{"notebook":"@observablehq/test-observable-quarto","include":["viewof dogRadio","chart"],"hide":null,"input":null,"input_js":[],"observers":null,"update_height":true,"update_width":true},"evals":[],"jsHooks":[]}</script>
 <p>With new data (a data frame):</p>
 <pre class="r"><code># Create a new data frame with the same variable names: 
 df = data.frame(name = c(&quot;Milo&quot;, &quot;Otis&quot;, &quot;Scout&quot;), weight = c(20, 11, 42))</code></pre>
@@ -1284,8 +1284,8 @@ df = data.frame(name = c(&quot;Milo&quot;, &quot;Otis&quot;, &quot;Scout&quot;),
   include = c(&quot;viewof dogRadio&quot;, &quot;chart&quot;),
   input = list(data = df) # Replace data with df
 )</code></pre>
-<div class="robservable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-8b42bb6f1eddcbe36103" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-8b42bb6f1eddcbe36103">{"x":{"notebook":"@observablehq/test-observable-quarto","include":["viewof dogRadio","chart"],"hide":null,"input":{"data":[{"name":"Milo","weight":20},{"name":"Otis","weight":11},{"name":"Scout","weight":42}]},"input_js":[],"observers":null,"update_height":true,"update_width":true},"evals":[],"jsHooks":[]}</script>
+<div class="robservable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-70eda2f9140cfe7f3c13" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-70eda2f9140cfe7f3c13">{"x":{"notebook":"@observablehq/test-observable-quarto","include":["viewof dogRadio","chart"],"hide":null,"input":{"data":[{"name":"Milo","weight":20},{"name":"Otis","weight":11},{"name":"Scout","weight":42}]},"input_js":[],"observers":null,"update_height":true,"update_width":true},"evals":[],"jsHooks":[]}</script>
 
 
 
